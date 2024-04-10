@@ -1,1 +1,1 @@
-web: gunicorn earthquakely:app
+web: gunicorn main:app
