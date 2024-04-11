@@ -43,7 +43,7 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    background-color: #FFFF00; /* Green background for submit button */
+    background-color: black; /* Green background for submit button */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -53,7 +53,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #FFFF75; /* Darker green on hover */
+    background-color: red; /* Darker green on hover */
 }
 
 .shaken-images img {
