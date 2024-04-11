@@ -35,16 +35,21 @@ def upload_image():
         gif_path = create_shaking_gif(filepath)
         return send_from_directory(os.path.dirname(gif_path), os.path.basename(gif_path))
 
+
 def create_shaking_gif(filepath):
     img = Image.open(filepath)
     frames = []
 
-    # Create frames with the image shifted slightly in random directions
+    # Create frames with the image shifted randomly in different directions
     for _ in range(10):  # Create 10 frames for the GIF
         shifted_img = img.copy()
-        x_shift, y_shift = np.random.randint(-150, 60, size=2)
-        shifted_img = shifted_img.transform(shifted_img.size, Image.AFFINE, (1, 0, x_shift, 50, 211, y_shift))
         frames.append(shifted_img)
+
+        for frame in frames:
+            x_shift = random.randint(-10, 10)  # Random X-axis shift
+            y_shift = random.randint(-10, 10)  # Random Y-axis shift
+            frame = frame.transform(frame.size, Image.AFFINE, (1, 0, x_shift, 0, 1, y_shift))
+            frames.append(frame)
 
     # Save the frames as a GIF
     gif_path = filepath.rsplit('.', 1)[0] + '_shaking.gif'
