@@ -40,22 +40,19 @@ def create_shaking_gif(filepath):
     img = Image.open(filepath)
     frames = []
 
-    # Create frames with the image shifted randomly in different directions
+    # Create frames with the image shifted slightly in random directions
     for _ in range(10):  # Create 10 frames for the GIF
         shifted_img = img.copy()
+        x_shift, y_shift = np.random.randint(-5, 6, size=2)
+        shifted_img = shifted_img.transform(shifted_img.size, Image.AFFINE, (1, 0, x_shift, 0, 1, y_shift))
         frames.append(shifted_img)
-
-        for frame in frames:
-            x_shift = random.randint(-10, 10)  # Random X-axis shift
-            y_shift = random.randint(-10, 10)  # Random Y-axis shift
-            frame = frame.transform(frame.size, Image.AFFINE, (1, 0, x_shift, 0, 1, y_shift))
-            frames.append(frame)
 
     # Save the frames as a GIF
     gif_path = filepath.rsplit('.', 1)[0] + '_shaking.gif'
     frames[0].save(gif_path, save_all=True, append_images=frames[1:], optimize=False, duration=100, loop=0)
 
     return gif_path
+
 
 if __name__ == '__main__':
     app.run(debug=True)
