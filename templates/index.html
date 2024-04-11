@@ -2,22 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upload Image to Shake it!</title>
+    <title>Upload Image to Earthquakify it</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Upload a Static Image to Earthquakify it</h2>
-    <!-- Form for uploading images -->
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" required>
-        <input type="submit" value="Upload Image">
-    </form>
-
-    <!-- Display the last four shaken images -->
-    <div class="shaken-images">
-        {% for image in images %}
-            <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Shaken Image">
-        {% endfor %}
+    <div class="content">
+        <h2>Upload a Static Image to Earthquakify it</h2>
+        <!-- Form for uploading images -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <input type="submit" value="Upload Image">
+        </form>
     </div>
 </body>
 </html>

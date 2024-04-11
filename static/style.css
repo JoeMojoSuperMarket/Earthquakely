@@ -1,23 +1,32 @@
+@font-face {
+    font-family: 'Gooper';
+    src: url('/static/fonts/Gooper-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 body, html {
     background-color: black;
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Cooper', serif; /* Make sure the font name is correct */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gooper', serif;
+    color: white; /* This sets the default text color to white */
 }
 
-.container {
-  text-align: center; /* Center align text */
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Added to ensure the content is full-width */
 }
-
-/* Add any additional styling below */
-/* ... */
 
 h2 {
-    color: #FFFF00;
-    font-family: 'Gooper', sans-serif;
+    color: #FFFF00; /* Yellow color for headings */
+    margin-bottom: 20px; /* Space below the header */
 }
 
 form {
@@ -25,6 +34,8 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust width as needed */
+    max-width: 400px; /* Maximum width of the form */
 }
 
 input[type="file"] {
@@ -32,29 +43,23 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #FFFF00; /* Green background for submit button */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%; /* Full width of the parent container */
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-@font-face {
-  font-family: 'Gooper';
-  src: url('/static/fonts/Gooper-Bold.otf') format('truetype');
-  font-weight: bold;
-  font-style: bold;
+    background-color: #FFFF75; /* Darker green on hover */
 }
 
 .shaken-images img {
-    width: 100px; /* Or any size */
+    width: 100px; /* Adjust width as necessary */
     height: auto;
     margin: 10px;
-    border: 2px solid #ccc; /* Optional: adds a border around each image */
-    border-radius: 4px; /* Optional: rounds the corners of the images */
+    border: 2px solid #ccc; /* Grey border */
+    border-radius: 4px; /* Rounded corners */
 }
