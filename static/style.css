@@ -7,6 +7,7 @@ body {
 
 h2 {
     color: #444;
+    font-family: 'Gooper', sans-serif;
 }
 
 form {
@@ -31,4 +32,11 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+@font-face {
+  font-family: 'Gooper';
+  src: url('/static/fonts/Gooper-Bold.otf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
 }
